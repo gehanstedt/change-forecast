@@ -9,6 +9,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
+
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -39,11 +40,13 @@ const styles = {
   }
 };
 
+
 const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
   return (
+    
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
@@ -109,4 +112,5 @@ export default function TableList() {
       </GridItem>
     </GridContainer>
   );
+
 }
