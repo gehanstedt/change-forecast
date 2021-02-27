@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const changeSchema = new Schema({
+    number_affected: { type: String, required: true },
     number: { type: String, required: true },
     reviewed: { type: String, required: true },
     comments_and_work_notes: { type: String, required: true }, 
