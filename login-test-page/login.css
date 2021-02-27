@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  color: #ffffff;
+  background: #ffffff;
+  font: 600 16px/18px 'Open Sans', sans-serif;
+  background: linear-gradient(-45deg, #eeeb52, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+/* Login/Sign Up form */
+
+
+
+.card {
+  width: 400px;
+  padding: 20px;
+  border: none;
+  margin-top: 10%;
+  box-shadow: 3px 3px 3px 3px #050505;
+
+}
+
+.account {
+  font-weight: 500;
+  font-size: 17px
+}
+
+.contact {
+  font-size: 13px
+}
+
+.form-control {
+  text-indent: 14px
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #4a148c;
+  outline: 0;
+  box-shadow: none
+}
+
+.inputbox {
+  margin-bottom: 10px;
+  position: relative
+}
+
+.inputbox i {
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  color: #dadada
+}
+
+.form-check-label {
+  font-size: 13px
+}
+
+.form-check-input {
+  width: 14px;
+  height: 15px;
+  margin-top: 5px
+}
+
+.forgot {
+  font-size: 14px;
+  text-decoration: none;
+  color: #4A148C
+}
+
+.mail {
+  color: #4a148c;
+  text-decoration: none
+}
+
+.form-check {
+  cursor: pointer
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #4A148C;
+  border-color: #4A148C
+}
