@@ -1,7 +1,18 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const mongoose = require("mongoose");
 const app = express();
+
+
+// Connect to Mongo database via Mongoose
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/change-forecast", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
+
 
 // Define middleware here
 // app.use(express.urlencoded({ extended: true }));
@@ -20,5 +31,5 @@ const app = express();
 //     });
 //
 //     app.listen(PORT, () => {
-//       console.log(`í¼Ž ==> API server now on port ${PORT}!`);
+//       console.log(`ï¿½ï¿½ï¿½ ==> API server now on port ${PORT}!`);
 //       });
