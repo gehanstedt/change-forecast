@@ -1,12 +1,12 @@
 /*!
 
 =========================================================
-* Material Dashboard React - v1.9.0
+* Light Bootstrap Dashboard React - v2.0.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
+* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
 * Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
+* Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
 
 * Coded by Creative Tim
 
@@ -17,25 +17,23 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
 
-// core components
-import Admin from "layouts/Admin.js";
-// import RTL from "layouts/RTL.js";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-//import "assets/css/material-dashboard-react.css?v=1.9.0";
-import "assets/css/material-dashboard-react.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/animate.min.css";
+import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
+import "./assets/css/demo.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const hist = createBrowserHistory();
+import AdminLayout from "layouts/Admin.js";
 
 ReactDOM.render(
-  <Router history={hist}>
+  <BrowserRouter>
     <Switch>
-      <Route path="/admin" component={Admin} />
-      {/* <Route path="/rtl" component={RTL} /> */}
+      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
-  </Router>,
+  </BrowserRouter>,
   document.getElementById("root")
 );
