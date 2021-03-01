@@ -20,7 +20,7 @@ import { useLocation, NavLink } from "react-router-dom";
 
 import { Nav } from "react-bootstrap";
 
-import logo from "assets/img/reactlogo.png";
+import logo from "assets/img/gdog-ninja.png";
 
 function Sidebar({ color, image, routes }) {
   const location = useLocation();
@@ -37,19 +37,19 @@ function Sidebar({ color, image, routes }) {
       />
       <div className="sidebar-wrapper">
         <div className="logo d-flex align-items-center justify-content-start">
-          <a
+          {/* <a
             href="https://www.creative-tim.com?ref=lbd-sidebar"
             className="simple-text logo-mini mx-1"
           >
             <div className="logo-img">
               <img
-                src={require("assets/img/reactlogo.png").default}
+                src={require("assets/img/gdog-ninja.png").default}
                 alt="..."
               />
             </div>
-          </a>
-          <a className="simple-text" href="http://www.creative-tim.com">
-            Creative Tim
+          </a> */}
+          <a className="simple-text" href="/">
+            Change Forecast
           </a>
         </div>
         <Nav>
