@@ -33,15 +33,15 @@ function Forecast() {
                 <Table className="table-hover table-striped">
                   <thead>
                     <tr>
-                      <th className="border-0">number_affected</th>
+                      <th className="border-0">affected</th>
                       <th className="border-0">number</th>
                       <th className="border-0">reviewed</th>
-                      <th className="border-0">comments_and_work_notes</th>
+                      <th className="border-0">comments</th>
                       <th className="border-0">company</th>
-                      <th className="border-0">production_system</th>
-                      <th className="border-0">short_description</th>
-                      <th className="border-0">start_date</th>
-                      <th className="border-0">end_date</th>
+                      <th className="border-0">production</th>
+                      <th className="border-0">description</th>
+                      <th className="border-0">start</th>
+                      <th className="border-0">end</th>
                       <th className="border-0">class</th>
                       <th className="border-0">location</th>
                       <th className="border-0">time_zone</th>
@@ -59,15 +59,83 @@ function Forecast() {
                       <td>Corporate</td>
                       <td>true</td>
                       <td>Change description</td>
-                      <td>2021-02-21T03:46:34.578+00:00</td>
-                      <td>2021-02-21T03:46:34.578+00:00</td>
+                      <td>2021-02-21</td>
+                      <td>2021-02-21</td>
                       <td>Application</td>
                       <td>Location1</td>
                       <td>America/New_York</td>
                       <td>My justification1</td>
                       <td>@Assign Group</td>
                       <td>MAJOR</td>   
-                    </tr>                   
+                    </tr>       
+                    <tr>
+                      <td>2</td>
+                      <td>CHG0001</td>
+                      <td>Pending</td>
+                      <td>Comments</td>
+                      <td>Corporate</td>
+                      <td>true</td>
+                      <td>Change description</td>
+                      <td>2021-02-21</td>
+                      <td>2021-02-21</td>
+                      <td>Application</td>
+                      <td>Location1</td>
+                      <td>America/New_York</td>
+                      <td>My justification1</td>
+                      <td>@Assign Group</td>
+                      <td>MAJOR</td>   
+                    </tr> 
+                    <tr>
+                      <td>2</td>
+                      <td>CHG0001</td>
+                      <td>Pending</td>
+                      <td>Comments</td>
+                      <td>Corporate</td>
+                      <td>true</td>
+                      <td>Change description</td>
+                      <td>2021-02-21</td>
+                      <td>2021-02-21</td>
+                      <td>Application</td>
+                      <td>Location1</td>
+                      <td>America/New_York</td>
+                      <td>My justification1</td>
+                      <td>@Assign Group</td>
+                      <td>MAJOR</td>   
+                    </tr> 
+                    <tr>
+                      <td>2</td>
+                      <td>CHG0001</td>
+                      <td>Pending</td>
+                      <td>Comments</td>
+                      <td>Corporate</td>
+                      <td>true</td>
+                      <td>Change description</td>
+                      <td>2021-02-21</td>
+                      <td>2021-02-21</td>
+                      <td>Application</td>
+                      <td>Location1</td>
+                      <td>America/New_York</td>
+                      <td>My justification1</td>
+                      <td>@Assign Group</td>
+                      <td>MAJOR</td>   
+                    </tr>                                                                         
+                    <tr>
+                      <td>2</td>
+                      <td>CHG0001</td>
+                      <td>Pending</td>
+                      <td>Comments</td>
+                      <td>Corporate</td>
+                      <td>true</td>
+                      <td>Change description</td>
+                      <td>2021-02-21</td>
+                      <td>2021-02-21</td>
+                      <td>Application</td>
+                      <td>Location1</td>
+                      <td>America/New_York</td>
+                      <td>My justification1</td>
+                      <td>@Assign Group</td>
+                      <td>MAJOR</td>   
+                    </tr>                     
                   </tbody>
                 </Table>
               </Card.Body>
