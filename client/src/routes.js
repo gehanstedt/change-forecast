@@ -16,6 +16,7 @@
 
 */
 import Dashboard from "views/Dashboard.js";
+import Forecast from "views/Forecast.js";
 import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
@@ -38,6 +39,13 @@ const dashboardRoutes = [
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
+    layout: "/admin",
+  },
+  {
+    path: "/forecast",
+    name: "Forecast",
+    icon: "nc-icon nc-cloud-download-93",
+    component: Forecast,
     layout: "/admin",
   },
   {
