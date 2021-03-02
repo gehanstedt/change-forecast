@@ -235,11 +235,12 @@ function Dashboard() {
           </Col>
         </Row>
         <Row>
+          {/*  */}
           <Col md="6">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">2017 Sales</Card.Title>
-                <p className="card-category">All products including Taxes</p>
+                <Card.Title as="h4">Percentage of Incidents Caused by Change</Card.Title>
+                <p className="card-category">Change Metrics</p>
               </Card.Header>
               <Card.Body>
                 <div className="ct-chart" id="chartActivity">
@@ -261,32 +262,32 @@ function Dashboard() {
                       ],
                       series: [
                         [
-                          542,
-                          443,
-                          320,
-                          780,
-                          553,
-                          453,
-                          326,
-                          434,
-                          568,
-                          610,
-                          756,
-                          895,
+                          55,
+                          47,
+                          35,
+                          75,
+                          28,
+                          39,
+                          46,
+                          31,
+                          33,
+                          17,
+                          22,
+                          43,
                         ],
                         [
-                          412,
-                          243,
-                          280,
-                          580,
-                          453,
-                          353,
-                          300,
-                          364,
-                          368,
-                          410,
-                          636,
-                          695,
+                          25,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
+                          ,
                         ],
                       ],
                     }}
@@ -317,8 +318,8 @@ function Dashboard() {
               <Card.Footer>
                 <div className="legend">
                   <i className="fas fa-circle text-info"></i>
-                  Tesla Model S <i className="fas fa-circle text-danger"></i>
-                  BMW 5 Series
+                  2019 <i className="fas fa-circle text-danger"></i>
+                  2020
                 </div>
                 <hr></hr>
                 <div className="stats">
@@ -328,6 +329,7 @@ function Dashboard() {
               </Card.Footer>
             </Card>
           </Col>
+          {/*  */}
           <Col md="6">
             <Card className="card-tasks">
               <Card.Header>
