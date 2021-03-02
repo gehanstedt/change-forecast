@@ -72,18 +72,18 @@ function Header() {
             <Nav.Item>
               <Nav.Link
                 className="m-0"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                href="/admin/user"
+                // onClick={(e) => e.preventDefault()}
               >
                 <span className="no-icon">Account</span>
               </Nav.Link>
             </Nav.Item>
             
             <Nav.Item>
-              <Nav.Link
+              <Nav.Link              
                 className="m-0"
-                href="/admin/userprofile"
-                onClick={(e) => e.preventDefault()}
+                href="/admin/user"
+                // onClick={(e) => e.preventDefault()}
               >
                 <span className="no-icon">Log out</span>
               </Nav.Link>
