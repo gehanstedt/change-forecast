@@ -48,7 +48,7 @@ class Footer extends Component {
             </ul> */}
             <p className="copyright text-center">
               {new Date().getFullYear()}{" "}
-              <a href="https://github.com/gehanstedt/change-forecast">GT Bootcamp</a>, Built with React, Bootstrap, and Mongoose
+              <a href="https://github.com/gehanstedt/change-forecast">GT Bootcamp</a>, Built with love
             </p>
           </nav>
         </Container>
