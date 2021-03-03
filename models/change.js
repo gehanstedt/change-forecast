@@ -5,7 +5,6 @@ const changeSchema = new Schema({
     number_affected: { type: String, required: true },
     number: { type: String, required: true },
     reviewed: { type: String, required: true },
-    comments_and_work_notes: { type: String, required: true }, 
     company: { type: String, required: true },
     production_system: { type: String, required: true },
     short_description: { type: String, required: true }, 
