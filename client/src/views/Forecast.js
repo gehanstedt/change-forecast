@@ -78,7 +78,6 @@ class Forecast extends Component {
                         <th className="border-0">affected</th>
                         <th className="border-0">number</th>
                         <th className="border-0">reviewed</th>
-                        <th className="border-0">comments</th>
                         <th className="border-0">company</th>
                         <th className="border-0">production</th>
                         <th className="border-0">description</th>
