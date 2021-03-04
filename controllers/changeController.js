@@ -15,6 +15,14 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findMajor: function(req, res) {
+    db.Change
+      .find({
+        sys_tag: "MAJOR"
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     db.Book
       .create(req.body)
