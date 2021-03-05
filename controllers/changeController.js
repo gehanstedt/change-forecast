@@ -33,7 +33,15 @@ module.exports = {
         full_name: req.body.full_name,
         email: req.body.email,
         password: req.body.password})
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => {
+        console.log (dbModel);
+        res.json({
+          _id: dbModel._id,
+          username: dbModel.username,
+          full_name: dbModel.full_name,
+          email: dbModel.email
+        });
+      })
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
