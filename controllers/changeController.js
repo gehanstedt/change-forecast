@@ -23,10 +23,25 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
-    db.Book
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
+  userAdd: function(req, res) {
+    console.log (`In the userAdd controller.`);
+    console.log (`Req.body:`);
+    console.log (req.body);
+    db.User
+      .create ({
+        username: req.body.username,
+        full_name: req.body.full_name,
+        email: req.body.email,
+        password: req.body.password})
+      .then(dbModel => {
+        console.log (dbModel);
+        res.json({
+          _id: dbModel._id,
+          username: dbModel.username,
+          full_name: dbModel.full_name,
+          email: dbModel.email
+        });
+      })
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
