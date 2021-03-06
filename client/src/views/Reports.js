@@ -43,7 +43,16 @@ class Forecast extends Component {
 
   componentDidMount () {
     console.log ('In componentDidMount ()');
-    var request = axios.get("/api/change")
+//  Example on how to use the change-variable API request with major and days options
+//    var request = axios.get("/api/change-variable?major=true&days=5")
+//
+//  How to use the change API request all changes (no filters)
+//    var request = axios.get("/api/change")
+//
+//  How to use the change-major API request only major changes
+//    var request = axios.get("/api/change-major")
+//
+    var request = axios.get("/api/change-major")
     .then ( request => {
       this.setState (
         {
