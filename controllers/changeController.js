@@ -43,10 +43,53 @@ module.exports = {
         start_date: {
           $lt: cutOffDate,
           $gt: currentDate
+        },
+        sys_tag: "MAJOR"
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  findMajorbyVariables: function(req, res) {
+    const daysRequested = parseInt (req.query.days);
+    console.log (`daysRequested: ${daysRequested}`);
+    console.log (`major:  ${req.query.major}`);
+    var currentDate = new Date ();
+    currentDate.setHours(0);
+    currentDate.setMinutes(0);
+    currentDate.setSeconds(0);
+    var cutOffDate = new Date ();
+    cutOffDate.setDate(cutOffDate.getDate() + daysRequested);
+    cutOffDate.setHours(23);
+    cutOffDate.setMinutes(59);
+    cutOffDate.setSeconds(59);
+    console.log (`currentDate:  ${currentDate}`);
+    console.log (`cutOffDate ${cutOffDate}`);
+    if (req.query.major === 'true') {
+      console.log (`Only major changes requested.`)
+      db.Change
+      .find({
+        start_date: {
+          $lt: cutOffDate,
+          $gt: currentDate
+        },
+        sys_tag: "MAJOR"
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+    }
+
+    else {
+      console.log (`All changes requested.`)
+      db.Change
+      .find({
+        start_date: {
+          $lt: cutOffDate,
+          $gt: currentDate
         }
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+    }
   },
   userAdd: function(req, res) {
     console.log (`In the userAdd controller.`);
