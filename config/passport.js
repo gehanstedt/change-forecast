@@ -36,7 +36,12 @@ passport.use(new LocalStrategy(
       }
       // If none of the above, return the user
 
-      return done(null, dbUser);
+      return done(null, {
+        _id: dbUser._id,
+        username: dbUser.username,
+        full_name: dbUser.full_name,
+        email: dbUser.email
+      });
     });
   }
 ));
