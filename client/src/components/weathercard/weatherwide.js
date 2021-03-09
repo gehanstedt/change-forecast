@@ -1,14 +1,25 @@
 import React from 'react';
 import {Card, Row, Col, Button} from 'react-bootstrap';
 
-const WeatherWide = ({dt, chg_total, major_total, main, icon}) => {
-  // create a date object with Date class constructor
-  const date = new Date(dt);
+const WeatherWide = ({day, chg_total, major_total, conditions}) => {
+// create a date object with Date class constructor
+const weatherimage = require("assets/img/weather-icons/sunny.png").default;
+//low chg Sunny, med chg Cloudy, high chg Rain, major chg Thunderstorm
+
+const weatherimages = [   
+    {   
+    "sunny" : require("assets/img/weather-icons/sunny.png").default,
+    "cloudy" : require("assets/img/weather-icons/cloudy.png").default,
+    "rainy" : require("assets/img/weather-icons/rainy.png").default,
+    "thunderstorm" : require("assets/img/weather-icons/t-storm-rain.png").default
+    }
+  ];
+
   return (    
     
       <Row>
         <Col md="12">
-          <Card className="card-user">
+          <Card className="card-user">              
             <div className="card-image">
               <img
                 alt="..."
@@ -20,51 +31,24 @@ const WeatherWide = ({dt, chg_total, major_total, main, icon}) => {
             </div>
             <Card.Body>
               <div className="author">
-                <a href="/admin/Reports">
+                <a href="/admin/Reports">                
                   <img
                     alt="..."
-                    className="avatar border-gray"
-                    src={require("assets/img/hazy.png").default}
+                    className="avatar"                    
+                    src={weatherimage}
                   ></img>
-                  <h5 className="title">Todays Forecast</h5>
+                  <h2 className="title">{day}'s Forecast: {conditions}</h2>
                 </a>                
-              </div>
+              </div>              
               <p className="description text-center">
                 Major Changes: {major_total}<br></br>
-                Total Changes: {chg_total} <br></br>
-                {date.toLocaleDateString()} - {date.toLocaleTimeString()}
+                Total Changes: {chg_total} <br></br>                       
               </p>
             </Card.Body>
 
           </Card>
         </Col>
       </Row>
-
-
-
-
-
-    //     <Card>
-    //         <Card.Img variant="top" src={             
-    //             //require('assets/img/',icon)
-    //             require("assets/img/hazy.png")
-    //             .default}
-    //             />
-    //         <Card.Body>
-    //         <Card.Title>{main}</Card.Title>
-
-    //         {/*  datetime is received in milliseconds, let's turn into local date time */}
-    //         <p>
-    //         {date.toLocaleDateString()} - {date.toLocaleTimeString()}
-    //         </p>
-    //         {/* minimum temperature */}
-    //         <p>Total Changes: {chg_total}</p>
-    //         {/* maximum temperature */}
-    //         <p>Major Changes: {major_total}</p>
-    //     </Card.Body>
-    //   </Card>
-
-
   );
 };
 
