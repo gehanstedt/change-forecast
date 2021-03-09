@@ -3,7 +3,7 @@ const changeController = require("../../controllers/changeController");
 
 // Matches with "/api/change-major-days"
 router.route("/") 
-  .get(changeController.findMajorDayCount)
+  .get(changeController.findDayCount)
 
 //  .post(booksController.create);
 
