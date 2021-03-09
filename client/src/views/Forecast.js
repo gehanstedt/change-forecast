@@ -37,6 +37,8 @@ weekday[6] = "Saturday";
 var today = weekday[d.getDay()];
 var tomorrow = weekday[d.getDay()+1];
 
+// Sunny, Cloudy, Rainy, Thunderstorm
+
 
 const Forecast = () => {
   return (
@@ -46,7 +48,7 @@ const Forecast = () => {
           day = {weekday[d.getDay()]}
           chg_total="15"
           major_total="24"
-          conditions="Rainy"
+          conditions="Thunderstorm"
         />    
         <Row>
         <Col lg="4" md="6">
