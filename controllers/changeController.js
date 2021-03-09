@@ -49,6 +49,34 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findMajorDayCount: function(req, res) {
+    const daysRequested = parseInt (req.query.days);
+    const daysRequestedOffset = parseInt (req.query.offset);
+    var currentDate = new Date ();
+    currentDate.setDate(currentDate.getDate() + daysRequestedOffset);
+    currentDate.setHours(0);
+    currentDate.setMinutes(0);
+    currentDate.setSeconds(0);
+    var cutOffDate = new Date (currentDate);
+    cutOffDate.setDate(cutOffDate.getDate() + daysRequested);
+    cutOffDate.setHours(23);
+    cutOffDate.setMinutes(59);
+    cutOffDate.setSeconds(59);
+    console.log (`currentDate:  ${currentDate}`);
+    console.log (`cutOffDate ${cutOffDate}`);
+    db.Change
+      .find({
+        start_date: {
+          $lt: cutOffDate,
+          $gt: currentDate
+        },
+        sys_tag: "MAJOR"
+      }).count()
+      .then(majorDayCount => {
+        res.json(majorDayCount)
+      })
+      .catch(err => res.status(422).json(err));
+  },
   findMajorbyVariables: function(req, res) {
     const daysRequested = parseInt (req.query.days);
     console.log (`daysRequested: ${daysRequested}`);

@@ -32,7 +32,7 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Number</p>
+                      <p className="card-category">Total Changes</p>
                       <Card.Title as="h4">150GB</Card.Title>
                     </div>
                   </Col>
@@ -53,12 +53,12 @@ function Dashboard() {
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-light-3 text-success"></i>
+                      <i className="nc-icon nc-umbrella-13 text-success"></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Revenue</p>
+                      <p className="card-category">Major</p>
                       <Card.Title as="h4">$ 1,345</Card.Title>
                     </div>
                   </Col>
@@ -79,12 +79,12 @@ function Dashboard() {
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-vector text-danger"></i>
+                      <i className="nc-icon nc-sun-fog-29 text-danger"></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Errors</p>
+                      <p className="card-category">Normal</p>
                       <Card.Title as="h4">23</Card.Title>
                     </div>
                   </Col>
@@ -105,12 +105,12 @@ function Dashboard() {
                 <Row>
                   <Col xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-favourite-28 text-primary"></i>
+                      <i className="nc-icon nc-explore-2 text-primary"></i>
                     </div>
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Followers</p>
+                      <p className="card-category">Standard</p>
                       <Card.Title as="h4">+45K</Card.Title>
                     </div>
                   </Col>
