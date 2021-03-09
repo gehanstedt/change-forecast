@@ -22,71 +22,85 @@ import {
 import WeatherCard from '../components/weathercard/Weathercard';
 import WeatherWide from '../components/weathercard/weatherwide';
 
+
+
+var d = new Date();
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var today = weekday[d.getDay()];
+var tomorrow = weekday[d.getDay()+1];
+
+
 const Forecast = () => {
   return (
     <div className="App">
-      {/* dt is in unix-seconds but javascript uses milliseconds, multiply with 1000 */}
-      {/* chg_total, major_total */}
-      <Container>
+      <Container fluid>
         <WeatherWide
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
+          day = {weekday[d.getDay()]}
+          chg_total="15"
+          major_total="24"
+          conditions="Rainy"
         />    
+        <Row>
+        <Col lg="4" md="6">
+        <WeatherCard
+          day = {weekday[d.getDay()+1]}
+          chg_total="67"
+          major_total="39"
+          conditions="Sunny"
+        />
+        </Col>
+        <Col lg="4" md="6">
+        <WeatherCard
+          day = {weekday[d.getDay()+2]}
+          chg_total="27"
+          major_total="29"
+          conditions="Sunny"
+        />
+        </Col>
 
+        <Col lg="4" md="6">
+        <WeatherCard
+          day = {weekday[d.getDay()+3]}
+          chg_total="27"
+          major_total="29"
+          conditions="Cloudy"
+        />            
+        </Col>
+        <Col lg="4" md="6">
+        <WeatherCard
+          day = {weekday[d.getDay()+4]}
+          chg_total="227"
+          major_total="239"
+          conditions="Thunderstorm"          
+        />
+        </Col>
+        <Col lg="4" md="6">
+        <WeatherCard
+          day = {weekday[d.getDay()+5]}
+          chg_total="227"
+          major_total="439"
+          main="Clear"
+          conditions="Cloudy"
+        />
+        </Col>
+        <Col lg="4" md="6">
+        <WeatherCard
+          day = {weekday[d.getDay()+6]}
+          chg_total="217"
+          major_total="139"
+          conditions="Rainy"
+        />
+        </Col>
+      </Row>
            
-    <CardDeck style={{display: 'flex', flexDirection: 'row',justifyContent: 'right', padding:"20px"}}>
-        <WeatherCard
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
-        />
-        <WeatherCard
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
-        />
-        <WeatherCard
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
-        />
-</CardDeck>
-
-<CardDeck style={{display: 'flex', flexDirection: 'row',justifyContent: 'right', padding:"20px"}}>
-        <WeatherCard
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
-        />
-        <WeatherCard
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
-        />
-        <WeatherCard
-          dt={1602104400 * 1000}
-          chg_total="22.67"
-          major_total="24.39"
-          main="Clear"
-          icon="assets/img/hazy.png"
-        />
-
-</CardDeck>
-    
-      
       </Container>
     </div>
   );
