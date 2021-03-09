@@ -3,17 +3,8 @@ import {Card, Row, Col, Button} from 'react-bootstrap';
 
 const WeatherWide = ({day, chg_total, major_total, conditions}) => {
 // create a date object with Date class constructor
-const weatherimage = require("assets/img/weather-icons/sunny.png").default;
-//low chg Sunny, med chg Cloudy, high chg Rain, major chg Thunderstorm
-
-const weatherimages = [   
-    {   
-    "sunny" : require("assets/img/weather-icons/sunny.png").default,
-    "cloudy" : require("assets/img/weather-icons/cloudy.png").default,
-    "rainy" : require("assets/img/weather-icons/rainy.png").default,
-    "thunderstorm" : require("assets/img/weather-icons/t-storm-rain.png").default
-    }
-  ];
+const weatherimage = require(`assets/img/weather-icons/${conditions}.png`).default;
+const weatherbackground = require(`assets/img/${conditions}Background.jpg`).default;
 
   return (    
     
@@ -23,10 +14,7 @@ const weatherimages = [
             <div className="card-image">
               <img
                 alt="..."
-                src={
-                  require("assets/img/photo-1431578500526-4d9613015464.jpeg")
-                    .default
-                }
+                src={weatherbackground}
               ></img>
             </div>
             <Card.Body>
