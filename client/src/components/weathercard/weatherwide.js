@@ -1,13 +1,12 @@
 import React from 'react';
 import {Card, Row, Col, Button} from 'react-bootstrap';
 
-const WeatherWide = ({day, chg_total, major_total}) => {
-    const conditions = "Sunny";
+const WeatherWide = ({day, chg_total, major_total, conditions}) => {
+
     const weatherimage = require(`assets/img/weather-icons/${conditions}.png`).default;
     const weatherbackground = require(`assets/img/${conditions}Background.jpg`).default;
 
-  return (    
-    
+  return (        
       <Row>
         <Col md="12">
           <Card className="card-user">              

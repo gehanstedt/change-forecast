@@ -23,8 +23,9 @@ import WeatherCard from '../components/weathercard/Weathercard';
 import WeatherWide from '../components/weathercard/weatherwide';
 
 
+
 var d = new Date();
-var weekday = new Array(7);
+var weekday = new Array(14);
 weekday[0] = "Sunday";
 weekday[1] = "Monday";
 weekday[2] = "Tuesday";
@@ -32,6 +33,13 @@ weekday[3] = "Wednesday";
 weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
+weekday[7] = "Sunday";
+weekday[8] = "Monday";
+weekday[9] = "Tuesday";
+weekday[10] = "Wednesday";
+weekday[11] = "Thursday";
+weekday[12] = "Friday";
+weekday[13] = "Saturday";
 
 var Sunny = 15;
 var Cloudy = 25;
@@ -43,6 +51,15 @@ var tomorrow = weekday[d.getDay()+1];
 
 // Sunny, Cloudy, Rainy, Thunderstorm
 
+function getConditions(param) {
+  if (param < 15){return "Sunny"} else {
+    if (param < 25){return "Cloudy"} else {
+      if (param < 35){return "Rainy"} else {
+        {return "Thunderstorm"}
+      }
+    }
+  }
+};
 
 class Forecast extends Component {
   state = {    
@@ -62,6 +79,7 @@ class Forecast extends Component {
     majorVolume06: null
   }
 
+
   componentDidMount () {
     console.log ('In componentDidMount ()');
 //  Example on how to use the change-variable API request with major and days options
@@ -78,10 +96,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume0: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -92,10 +106,6 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume0: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
@@ -106,10 +116,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume1: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -120,10 +126,6 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume1: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
@@ -134,10 +136,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume2: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -148,10 +146,6 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume2: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
@@ -162,10 +156,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume3: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -176,10 +166,6 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume3: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
@@ -190,10 +176,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume4: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -204,10 +186,6 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume4: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
@@ -218,10 +196,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume5: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -232,10 +206,6 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume5: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
@@ -246,10 +216,6 @@ class Forecast extends Component {
       this.setState (
         {
           changeVolume6: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changeVolume);
         }
       )
     }
@@ -260,28 +226,31 @@ class Forecast extends Component {
       this.setState (
         {
           majorVolume6: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.majorVolume);
         }
       )
     }
     );
-
-    if (this.state.majorVolume0 < Sunny){"Thunderstorm"} 
-
-};
-
+};  
+  
   render () {
+
+    var conditions0 = getConditions(this.state.majorVolume0);
+    var conditions1 = getConditions(this.state.majorVolume1);
+    var conditions2 = getConditions(this.state.majorVolume2);
+    var conditions3 = getConditions(this.state.majorVolume3);
+    var conditions4 = getConditions(this.state.majorVolume4);
+    var conditions5 = getConditions(this.state.majorVolume5);
+    var conditions6 = getConditions(this.state.majorVolume6);
+
     return (
       <div className="App">
         <Container fluid>
 
           <WeatherWide
-            day = {weekday[d.getDay()]}
+            day = "Today"
             chg_total={this.state.changeVolume0}
-            major_total={this.state.majorVolume0}              
+            major_total={this.state.majorVolume0}
+            conditions={conditions0}
           />    
 
           <Row>
@@ -290,7 +259,7 @@ class Forecast extends Component {
               day = {weekday[d.getDay()+1]}
               chg_total={this.state.changeVolume1}
               major_total={this.state.majorVolume1}
-              conditions="Sunny"
+              conditions={conditions1}
             />
           </Col>
           <Col lg="4" md="6">
@@ -298,7 +267,7 @@ class Forecast extends Component {
               day = {weekday[d.getDay()+2]}
               chg_total={this.state.changeVolume2}
               major_total={this.state.majorVolume2}
-              conditions="Sunny"
+              conditions={conditions2}
             />
           </Col>
 
@@ -307,7 +276,7 @@ class Forecast extends Component {
               day = {weekday[d.getDay()+3]}
               chg_total={this.state.changeVolume3}
               major_total={this.state.majorVolume3}
-              conditions="Cloudy"
+              conditions={conditions3}
             />            
           </Col>
           <Col lg="4" md="6">
@@ -315,7 +284,7 @@ class Forecast extends Component {
               day = {weekday[d.getDay()+4]}
               chg_total={this.state.changeVolume4}
               major_total={this.state.majorVolume4}
-              conditions="Thunderstorm"          
+              conditions={conditions4}          
             />
           </Col>
           <Col lg="4" md="6">
@@ -323,8 +292,7 @@ class Forecast extends Component {
               day = {weekday[d.getDay()+5]}
               chg_total={this.state.changeVolume5}
               major_total={this.state.majorVolume5}
-              main="Clear"
-              conditions="Cloudy"
+              conditions={conditions5}
             />
           </Col>
           <Col lg="4" md="6">
@@ -332,7 +300,7 @@ class Forecast extends Component {
               day = {weekday[d.getDay()+6]}
               chg_total={this.state.changeVolume6}
               major_total={this.state.majorVolume6}
-              conditions="Rainy"
+              conditions={conditions6}
           />
           </Col>
         </Row>
