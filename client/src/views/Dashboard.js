@@ -18,8 +18,39 @@ import {
   Tooltip,
 } from "react-bootstrap";
 
+var d = new Date();
+var testday= "Wednesday";
+var weekday = new Array(14);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+weekday[7] = "Sunday";
+weekday[8] = "Monday";
+weekday[9] = "Tuesday";
+weekday[10] = "Wednesday";
+weekday[11] = "Thursday";
+weekday[12] = "Friday";
+weekday[13] = "Saturday";
+
+var today = weekday[d.getDay()];
+var tomorrow = weekday[d.getDay()+1];
+
+
 class Dashboard extends Component {
   state = {
+    changeVolume0: null,
+    changeVolume2: null,
+    monthMajorVolume:null,
+    monthMajorVolume2:null,
+    monthMajorVolume3:null,
+    allChgsVolume: null,
+    allChgsVolume2: null,
+    allChgsVolume3: null,
+
     changes: [
       {
         "_id": "603a71f458d0185558f8d172",
@@ -39,10 +70,7 @@ class Dashboard extends Component {
         "sys_tag": "MAJOR"
       }
     ],
-    changeVolume: null
     
-    
-   
   }
 
   componentDidMount () {
@@ -56,6 +84,10 @@ class Dashboard extends Component {
 //  How to use the change-major API request only major changes
 //    var request = axios.get("/api/change-major")
 //
+//  How to use change-major to get month
+//    var request = axios.get("/api/change-bymonth-count?month=3&major=false&year=2021")
+
+
     axios.get("/api/change-days-count?major=false&offset=0&days=6")
     .then ( request => {
       this.setState (
@@ -85,9 +117,113 @@ var changeVolume2;
     }
     );
     
-  }
+    axios.get("/api/change-days-count?major=false&offset=0&days=0")
+    .then ( request => {
+      this.setState (
+        {
+          changeVolume0: request.data
+        }
+      )
+    }
+    );
+
+    axios.get("/api/change-days-count?major=true&offset=0&days=0")
+    .then ( request => {
+      this.setState (
+        {
+          majorVolume0: request.data
+        }
+      )
+    }
+    );
+
+    axios.get("/api/change-days-count?major=false&offset=1&days=0")
+    .then ( request => {
+      this.setState (
+        {
+          changeVolume1: request.data
+        }
+      )
+    }
+    );
+
+    //Gets Major changes for March 2021
+    axios.get("/api/change-bymonth-count?month=3&major=true&year=2021")
+    .then ( request => {
+      this.setState (
+        {
+          monthMajorVolume: request.data
+        }
+      )
+    }
+    );
+
+    //Gets Major changes for April 2021
+    axios.get("/api/change-bymonth-count?month=4&major=true&year=2021")
+    .then ( request => {
+      this.setState (
+        {
+          monthMajorVolume2: request.data
+        }
+      )
+    }
+    );
+ 
+    //Gets Major changes for May 2021
+    axios.get("/api/change-bymonth-count?month=5&major=true&year=2021")
+    .then ( request => {
+      this.setState (
+        {
+          monthMajorVolume3: request.data
+        }
+      )
+    }
+    );
+    
+    //Gets All changes for March 2021
+    axios.get("/api/change-bymonth-count?month=3&major=false&year=2021")
+    .then ( request => {
+      this.setState (
+        {
+          allChgsVolume: request.data
+        }
+      )
+    }
+    );
+
+    //Gets All changes for April 2021
+    axios.get("/api/change-bymonth-count?month=4&major=false&year=2021")
+    .then ( request => {
+      this.setState (
+        {
+          allChgsVolume2: request.data
+        }
+      )
+    }
+    );
+ 
+    //Gets All changes for May 2021
+    axios.get("/api/change-bymonth-count?month=5&major=false&year=2021")
+    .then ( request => {
+      this.setState (
+        {
+          allChgsVolume3: request.data
+        }
+      )
+    }
+    );
+
+};  
+  
+
 
   render () {
+    var normal = this.state.allChgsVolume - this.state.monthMajorVolume
+    var normal2 = this.state.allChgsVolume2 - this.state.monthMajorVolume2
+    var normal3 = this.state.allChgsVolume3 - this.state.monthMajorVolume3
+
+    
+
     return (
       <>
         <Container fluid>
@@ -158,29 +294,22 @@ var changeVolume2;
               <Card>
                 <Card.Header>
                   <Card.Title as="h4">2021 Changes by Month</Card.Title>
-                  <p className="card-category">Major and Normal</p>
+                  <p className="card-category">(Major, and Normal)</p>
                 </Card.Header>
                 <Card.Body>
                   <div className="ct-chart" id="chartHours">
                     <ChartistGraph
                       data={{
                         labels: [
-                          "Jan",
-                          "Feb",
                           "Mar",
                           "Apr",
                           "May",
-                          "Jun",
-                          "Jul",
-                          "Aug",
-                          "Sept",
-                          "Oct",
-                          "Nov",
-                          "Dec",
                         ],
                         series: [
-                          [67, 152, 143, 240, 287, 335, 435, 437],
-                          [23, 113, 67, 108, 190, 239, 307, 308],
+                          [normal, normal2, normal3],
+                          [this.state.monthMajorVolume, this.state.monthMajorVolume2, this.state.monthMajorVolume3]
+                          
+
                         ],
                       }}
                       type="Line"
@@ -218,9 +347,9 @@ var changeVolume2;
                 <Card.Footer>
                   <div className="legend">
                     <i className="fas fa-circle text-info"></i>
-                    Open <i className="fas fa-circle text-danger"></i>
-                    Click <i className="fas fa-circle text-warning"></i>
-                    Click Second Time
+                    Total Changes <i className="fas fa-circle text-danger"></i>
+                    Major Changes<i className="fas fa-circle text-warning"></i>
+                    Normal Changes
                   </div>
                  
                 </Card.Footer>
@@ -232,30 +361,31 @@ var changeVolume2;
             <Col md="12">
               <Card>
                 <Card.Header>
-                  <Card.Title as="h4">2021Changes by Day</Card.Title>
-                  <p className="card-category">Major and Normal</p>
+                  <Card.Title as="h4">2021 Changes by Day</Card.Title>
+                  <p className="card-category">(Total, Major, and Normal)</p>
                 </Card.Header>
                 <Card.Body>
+                
                   <div className="ct-chart" id="chartHours">
                     <ChartistGraph
-                      data={{
-                        labels: [
-                          "Jan",
-                          "12:00AM",
-                          "3:00PM",
-                          "6:00PM",
-                          "9:00PM",
-                          "12:00PM",
-                          "3:00AM",
-                          "6:00AM",
-                        ],
+                    data={{
+                        labels:[
+                          "Mon",
+                          "Tues",
+                          "Wed",
+                          "Thur",
+                          "Fri",
+                          "Sat",
+                          "Sun",
+                        ], 
+                        
                         series: [
-                          [287, 385, 490, 492, 554, 586, 698, 695],
-                          [67, 152, 143, 240, 287, 335, 435, 437],
-                          [23, 113, 67, 108, 190, 239, 307, 308],
+                          [],
+                        
                         ],
                       }}
                       type="Line"
+                      
                       options={{
                         low: 0,
                         high: 800,
@@ -269,7 +399,7 @@ var changeVolume2;
                         showPoint: true,
                         fullWidth: true,
                         chartPadding: {
-                          right: 50,
+                          right: 60,
                         },
                       }}
                       responsiveOptions={[
@@ -290,9 +420,9 @@ var changeVolume2;
                 <Card.Footer>
                   <div className="legend">
                     <i className="fas fa-circle text-info"></i>
-                    Open <i className="fas fa-circle text-danger"></i>
-                    Click <i className="fas fa-circle text-warning"></i>
-                    Click Second Time
+                    Total Changes <i className="fas fa-circle text-danger"></i>
+                    Major Changes <i className="fas fa-circle text-warning"></i>
+                    Normal Changes 
                   </div>
                  
                 </Card.Footer>
@@ -305,8 +435,8 @@ var changeVolume2;
             <Col md="12">
               <Card>
                 <Card.Header>
-                  <Card.Title as="h4">Percentage of Incidents Caused by Change</Card.Title>
-                  <p className="card-category">Change Metrics</p>
+                  <Card.Title as="h4">Percentage of P1 Incidents Caused by Change</Card.Title>
+                  <p className="card-category">P1 Incident Metrics</p>
                 </Card.Header>
                 <Card.Body>
                   <div className="ct-chart" id="chartActivity">
@@ -343,7 +473,7 @@ var changeVolume2;
                           ],
                           [
                             25,
-                            ,
+                            50,
                             ,
                             ,
                             ,
@@ -384,8 +514,8 @@ var changeVolume2;
                 <Card.Footer>
                   <div className="legend">
                     <i className="fas fa-circle text-info"></i>
-                    2019 <i className="fas fa-circle text-danger"></i>
-                    2020
+                    2020 <i className="fas fa-circle text-danger"></i>
+                    2021
                   </div>
                 </Card.Footer>
               </Card>
