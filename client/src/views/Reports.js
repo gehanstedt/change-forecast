@@ -19,104 +19,72 @@ import {
 } from "react-bootstrap";
 
 class Forecast extends Component {
-  state = {
-    changes: [
-      {
-        "_id": "603a71f458d0185558f8d172",
-        "number_affected": 2,
-        "number": "CHG0001",
-        "reviewed": "Pending",
-        "company": "Corporate",
-        "production_system": "true",
-        "short_description": "Change description",
-        "start_date": "2021-02-21T03:46:34.578Z",
-        "end_date": "2021-02-21T03:46:34.578Z",
-        "class": "Application",
-        "location": "Location1",
-        "time_zone": "America/New_York",
-        "justification": "My justification1",
-        "assignment_group": "@Assign Group",
-        "sys_tag": "MAJOR"
-      }
-    ]
-  }
+    handleClick = () => {
+        // new GetReports().functionWithArg('About React');
+        new GetReports();
+      };
 
-  componentDidMount () {
-    console.log ('In componentDidMount ()');
-//  Example on how to use the change-variable API request with major and days options
-//    var request = axios.get("/api/change-variable?major=true&days=5")
-//
-//  How to use the change API request all changes (no filters)
-//    var request = axios.get("/api/change")
-//
-//  How to use the change-major API request only major changes
-//    var request = axios.get("/api/change-major")
-//
-    var request = axios.get("/api/change-major")
-    .then ( request => {
-      this.setState (
-        {
-          changes: request.data
-        },
-        () => {
-          console.log ('Here');
-          console.log (this.state.changes[0].number);
-        }
-      )
-    }
-    );
-  }
-
-  render () {
+  render() {
     return (
-      <>
         <Container fluid>
-          <Row>
-          <Col md="12">
-              <Card className="strpied-tabled-with-hover">
-                <Card.Header>
-                  <Card.Title as="h4">Upcoming Major Changes</Card.Title>
-                  <p className="card-category">
-                    The best changes happen here
-                  </p>
-                </Card.Header>
-                <Card.Body className="table-full-width table-responsive px-0">
-                  <Table className="table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th className="border-0">affected</th>
-                        <th className="border-0">number</th>
-                        <th className="border-0">reviewed</th>
-                        <th className="border-0">company</th>
-                        <th className="border-0">production</th>
-                        <th className="border-0">description</th>
-                        <th className="border-0">start</th>
-                        <th className="border-0">end</th>
-                        <th className="border-0">class</th>
-                        <th className="border-0">location</th>
-                        <th className="border-0">time_zone</th>
-                        <th className="border-0">justification</th>
-                        <th className="border-0">assignment_group</th>
-                        <th className="border-0">sys_tag</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.changes.map(change => (
-                      <TableRow
-                        change={change}
-                      />))
-                    }
-                    </tbody>
-                  </Table>
-                </Card.Body>
-              </Card>
-            </Col>
-            
-          </Row>
-        </Container>
-      </>
-    );
-  }
+           <Button
+              className="btn-round btn-fill"
+              href="/admin/MajorDay"
+              // target="_blank"
+              variant="info"
+              >
+              Major changes for today
+            </Button>
+
+            <br></br>
+            <Button
+              className="btn-round btn-fill"
+              href="/admin/MajorWeek"
+              // target="_blank"
+              variant="info"
+              >
+              Major changes for upcoming week
+            </Button>
+            <br></br>
+            <Button
+              className="btn-round btn-fill"
+              href="/admin/MajorMonth"
+              // target="_blank"
+              variant="info"
+              >
+              Major changes for next 30 days
+            </Button>
+            <br></br>
+            <Button
+              className="btn-round btn-fill"
+              href="/admin/AllDayReport"
+              // target="_blank"
+              variant="info"
+              >
+              All changes for today 
+            </Button>
+            <br></br>
+            <Button
+              className="btn-round btn-fill"
+              href="/admin/AllWeekReport"
+              // target="_blank"
+              variant="info"
+              >
+              All changes for the week 
+            </Button>
+            <br></br>
+            <Button
+              className="btn-round btn-fill"
+              href="/admin/AllMonthReport"
+              // target="_blank"
+              variant="info"
+              >
+              All changes for the month
+            </Button>
+            </Container>
+    )
+}
+
 }
 
 export default Forecast;
