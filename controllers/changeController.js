@@ -93,6 +93,53 @@ module.exports = {
         .catch(err => res.status(422).json(err));   
       }
   },
+  findByMonthCount: function(req, res) {
+    console.log (`in findByMonthCount ()`);
+    var endDate;
+    const monthRequested = parseInt (req.query.month);
+    const yearRequested = parseInt (req.query.year);
+    // Create start date:
+    const beginDate = new Date (yearRequested, monthRequested - 1, 1, 0, 0, 0);
+    if (monthRequested === 12) {
+      endDate = new Date (yearRequested + 1, 0, 1, 0, 0, 0);
+    }
+
+    else {
+      endDate = new Date (yearRequested, monthRequested, 1, 0, 0, 0)
+    }
+
+    console.log (`beginDate:  ${beginDate}`);
+    console.log (`endDate ${endDate}`);
+
+    if (req.query.major === 'true') {
+      db.Change
+        .find({
+          start_date: {
+            $lt: endDate,
+            $gte: beginDate
+          },
+          sys_tag: "MAJOR"
+        }).count()
+        .then(result => {
+          res.json(result)
+        })
+        .catch(err => res.status(422).json(err));
+    }
+
+    else {
+      db.Change
+      .find({
+        start_date: {
+          $lt: endDate,
+          $gte: beginDate
+        },
+      }).count()
+      .then(result => {
+        res.json(result)
+      })
+      .catch(err => res.status(422).json(err));
+    }
+  },
   findMajorbyVariables: function(req, res) {
     const daysRequested = parseInt (req.query.days);
     console.log (`daysRequested: ${daysRequested}`);
