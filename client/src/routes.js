@@ -7,6 +7,12 @@ import Typography from "views/Typography.js";
 import Icons from "views/Icons.js";
 import Notifications from "views/Notifications.js";
 import Reports from "views/Reports.js";
+import MajorDay from "views/MajorDay.js";
+import MajorWeek from "views/MajorWeek.js";
+import MajorMonth from "views/MajorMonth.js";
+import AllDayReport from "views/AllDayReport.js";
+import AllWeekReport from "views/AllWeekReport.js";
+import AllMonthReport from "views/AllMonthReport.js";
 
 const dashboardRoutes = [
   {
@@ -29,6 +35,54 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: Reports,
     layout: "/admin",
+  },
+  {
+    path: "/MajorDay",
+    name: "Today Major",
+    icon: "nc-icon nc-notes",
+    component: MajorDay,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/MajorWeek",
+    name: "Week Major",
+    icon: "nc-icon nc-notes",
+    component: MajorWeek,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/MajorMonth",
+    name: "Month Major",
+    icon: "nc-icon nc-notes",
+    component: MajorMonth,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/AllDayReport",
+    name: "All Changes for today",
+    icon: "nc-icon nc-notes",
+    component: AllDayReport,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/AllWeekReport",
+    name: "All Changes for this week",
+    icon: "nc-icon nc-notes",
+    component: AllWeekReport,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/AllMonthReport",
+    name: "All Changes for this month",
+    icon: "nc-icon nc-notes",
+    component: AllMonthReport,
+    layout: "/admin",
+    invisible: true,
   },
   {
     path: "/user",
