@@ -1,10 +1,10 @@
 import React from 'react';
 import {Card, Row, Col, Button} from 'react-bootstrap';
 
-const WeatherWide = ({day, chg_total, major_total, conditions}) => {
-// create a date object with Date class constructor
-const weatherimage = require(`assets/img/weather-icons/${conditions}.png`).default;
-const weatherbackground = require(`assets/img/${conditions}Background.jpg`).default;
+const WeatherWide = ({day, chg_total, major_total}) => {
+    const conditions = "Sunny";
+    const weatherimage = require(`assets/img/weather-icons/${conditions}.png`).default;
+    const weatherbackground = require(`assets/img/${conditions}Background.jpg`).default;
 
   return (    
     
