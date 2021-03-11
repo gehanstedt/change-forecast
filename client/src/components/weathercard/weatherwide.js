@@ -27,7 +27,8 @@ const WeatherWide = ({day, chg_total, major_total, conditions}) => {
                   <h2 className="title">{day}'s Forecast: {conditions}</h2>
                 </a>                
               </div>              
-              <p className="description text-center">
+              {/* <p className="description text-center"> */}
+              <p className="card-footer text-center">
                 Major Changes: {major_total}<br></br>
                 Total Changes: {chg_total} <br></br>                       
               </p>

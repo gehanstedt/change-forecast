@@ -16,17 +16,17 @@ import AllMonthReport from "views/AllMonthReport.js";
 
 const dashboardRoutes = [
   {
-    path: "/forecast",
-    name: "Forecast",
-    icon: "nc-icon nc-cloud-download-93",
-    component: Forecast,
-    layout: "/admin",
-  },
-  {
     path: "/dashboard",
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
+    layout: "/admin",
+  },
+  {
+    path: "/forecast",
+    name: "Forecast",
+    icon: "nc-icon nc-cloud-download-93",
+    component: Forecast,
     layout: "/admin",
   },
   {
