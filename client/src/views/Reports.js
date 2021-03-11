@@ -27,6 +27,7 @@ class Forecast extends Component {
   render() {
     return (
         <Container fluid>
+          <div>
            <Button
               className="btn-round btn-fill"
               href="/admin/MajorDay"
@@ -35,8 +36,9 @@ class Forecast extends Component {
               >
               Major changes for today
             </Button>
-
+            </div>
             <br></br>
+            <div>
             <Button
               className="btn-round btn-fill"
               href="/admin/MajorWeek"
@@ -45,7 +47,9 @@ class Forecast extends Component {
               >
               Major changes for upcoming week
             </Button>
+            </div>
             <br></br>
+            <div>                        
             <Button
               className="btn-round btn-fill"
               href="/admin/MajorMonth"
@@ -54,7 +58,9 @@ class Forecast extends Component {
               >
               Major changes for next 30 days
             </Button>
+            </div>
             <br></br>
+            <div> 
             <Button
               className="btn-round btn-fill"
               href="/admin/AllDayReport"
@@ -63,7 +69,9 @@ class Forecast extends Component {
               >
               All changes for today 
             </Button>
+            </div>
             <br></br>
+            <div>
             <Button
               className="btn-round btn-fill"
               href="/admin/AllWeekReport"
@@ -72,7 +80,9 @@ class Forecast extends Component {
               >
               All changes for the week 
             </Button>
-            <br></br>
+            </div>
+            <br></br>            
+            <div>
             <Button
               className="btn-round btn-fill"
               href="/admin/AllMonthReport"
@@ -81,6 +91,8 @@ class Forecast extends Component {
               >
               All changes for the month
             </Button>
+            </div>
+            <br></br>
             </Container>
     )
 }

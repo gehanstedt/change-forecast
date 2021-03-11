@@ -13,20 +13,22 @@ import MajorMonth from "views/MajorMonth.js";
 import AllDayReport from "views/AllDayReport.js";
 import AllWeekReport from "views/AllWeekReport.js";
 import AllMonthReport from "views/AllMonthReport.js";
+import DetailReport from "views/DetailReport.js";
+
 
 const dashboardRoutes = [
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: "nc-icon nc-chart-pie-35",
-    component: Dashboard,
-    layout: "/admin",
-  },
   {
     path: "/forecast",
     name: "Forecast",
     icon: "nc-icon nc-cloud-download-93",
     component: Forecast,
+    layout: "/admin",
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    icon: "nc-icon nc-chart-pie-35",
+    component: Dashboard,
     layout: "/admin",
   },
   {
@@ -117,13 +119,21 @@ const dashboardRoutes = [
     invisible: true,
   },
   {
+    path: "/DetailReport",
+    name: "DetailReport",
+    icon: "nc-icon nc-atom",
+    component: DetailReport,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
     path: "/notifications",
     name: "Notifications",
     icon: "nc-icon nc-bell-55",
     component: Notifications,
     layout: "/admin",
-    invisible: true,
-  },
+    invisible: true,    
+  }
 ];
 
 export default dashboardRoutes;
