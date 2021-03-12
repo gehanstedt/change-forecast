@@ -5,7 +5,7 @@ import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
 import Icons from "views/Icons.js";
-import Notifications from "views/Notifications.js";
+import Login from "views/Login.js";
 import Reports from "views/Reports.js";
 import MajorDay from "views/MajorDay.js";
 import MajorWeek from "views/MajorWeek.js";
@@ -14,6 +14,7 @@ import AllDayReport from "views/AllDayReport.js";
 import AllWeekReport from "views/AllWeekReport.js";
 import AllMonthReport from "views/AllMonthReport.js";
 import DetailReport from "views/DetailReport.js";
+import Register from "views/Register.js";
 
 
 const dashboardRoutes = [
@@ -127,12 +128,20 @@ const dashboardRoutes = [
     invisible: true,
   },
   {
-    path: "/notifications",
-    name: "Notifications",
+    path: "/Login",
+    name: "Login",
     icon: "nc-icon nc-bell-55",
-    component: Notifications,
-    layout: "/admin",
-    invisible: true,    
+    component: Login,
+    layout: "/guest",
+    invisible: true,
+  },
+  {
+    path: "/Register",
+    name: "Registration",
+    icon: "nc-icon nc-bell-55",
+    component: Register,
+    layout: "/guest",
+    invisible: true,
   }
 ];
 
