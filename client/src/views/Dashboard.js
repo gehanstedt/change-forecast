@@ -18,7 +18,31 @@ import {
   Tooltip,
 } from "react-bootstrap";
 
+var d = new Date();
+var n = d.getDay();
 
+var weekday = new Array(14);
+weekday[0] = "Sun";
+weekday[1] = "Mon";
+weekday[2] = "Tue";
+weekday[3] = "Wed";
+weekday[4] = "Thu";
+weekday[5] = "Fri";
+weekday[6] = "Sat";
+weekday[7] = "Sun";
+weekday[8] = "Mon";
+weekday[9] = "Tue";
+weekday[10] = "Wed";
+weekday[11] = "Thu";
+weekday[12] = "Fri";
+weekday[13] = "Sat";
+
+var today = weekday[d.getDay()];
+var weekArray = new Array(7);
+  for ( var i = 0; i < 7; i++) {
+    weekArray[i] = weekday[d.getDay() + i];
+    console.log(weekArray[i])
+  }
 
 class Dashboard extends Component {
   state = {
@@ -495,13 +519,14 @@ var changeVolume2;
                     <ChartistGraph
                     data={{
                         labels:[
-                          "Mon",
-                          "Tues",
-                          "Wed",
-                          "Thur",
-                          "Fri",
-                          "Sat",
-                          "Sun",
+                          // {weekday[n.getDay()]},
+                          weekArray[0],
+                          weekArray[1],
+                          weekArray[2],
+                          weekArray[3],
+                          weekArray[4],
+                          weekArray[5],
+                          weekArray[6],
                         ], 
                         
                         series: [
