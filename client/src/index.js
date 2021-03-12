@@ -16,9 +16,9 @@ import GuestLayout from "layouts/Guest.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Route path="/guest" render={(props) => <GuestLayout {...props} />} />
-      <Redirect from="/" to="/admin/forecast" />
+      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />      
+      <Redirect from="/" to="/guest/login" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

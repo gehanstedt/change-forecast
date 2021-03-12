@@ -50,7 +50,7 @@
 
     > tbody > tr{
         position: relative;
-
+        font-size: .7rem;
         &:hover{
             .td-actions .btn{
                 @include opacity(1);
