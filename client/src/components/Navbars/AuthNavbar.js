@@ -56,20 +56,20 @@ function Header() {
             <Nav.Item>
               <Nav.Link
                 className="m-0"
-                href="/admin/user"
+                href="/guest/register"
                 // onClick={(e) => e.preventDefault()}
               >
-                <span className="no-icon">Account</span>
+                <span className="no-icon">Register</span>
               </Nav.Link>
             </Nav.Item>
             
             <Nav.Item>
               <Nav.Link              
                 className="m-0"
-                href="/guest/Login"
+                href="/admin/forecast"
                 // onClick={(e) => e.preventDefault()}
               >
-                <span className="no-icon">Log out</span>
+                <span className="no-icon">Hacks!</span>
               </Nav.Link>
             </Nav.Item>
           </Nav>
