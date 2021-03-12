@@ -27,36 +27,23 @@ function RegisterPage() {
                     <Card className="card-plain">
                     <div className="card-body">
                         <Form.Group>
+                        <label>Username</label>
                         <Form.Control
-                            placeholder="Your First Name"
-                            type="email"
+                            placeholder="Username"
+                            type="string"
                         ></Form.Control>
                         </Form.Group>
+
                         <Form.Group>
-                        <Form.Control
-                            placeholder="Your Last Name"
-                            type="email"
-                        ></Form.Control>
-                        </Form.Group>
-                        <Form.Group>
-                        <Form.Control
-                            placeholder="Company"
-                            type="email"
-                        ></Form.Control>
-                        </Form.Group>
-                        <Form.Group>
-                        <Form.Control
-                            placeholder="Enter email"
-                            type="email"
-                        ></Form.Control>
-                        </Form.Group>
-                        <Form.Group>
+                        <label>Password</label>                        
                         <Form.Control
                             placeholder="Password"
                             type="password"
-                        ></Form.Control>
+                        ></Form.Control>                        
                         </Form.Group>
+                        
                         <Form.Group>
+                        <label>Confirm Password</label>
                         <Form.Control
                             placeholder="Password Confirmation"
                             type="password"

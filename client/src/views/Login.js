@@ -33,10 +33,10 @@ function LoginPage() {
                 <Card.Body>
                   <Card.Body>
                     <Form.Group>
-                      <label>Email address</label>
+                      <label>Username</label>
                       <Form.Control
-                        placeholder="Enter email"
-                        type="email"
+                        placeholder="Enter Username"
+                        type="string"
                       ></Form.Control>
                     </Form.Group>
                     <Form.Group>
@@ -50,7 +50,6 @@ function LoginPage() {
                 </Card.Body>
                 <Card.Footer className="ml-auto mr-auto">
                   <Button href="/admin/Forecast">
-                    
                     Login
                   </Button>
                 </Card.Footer>
