@@ -54,20 +54,27 @@ class Dashboard extends Component {
     allChgsVolume: null,
     allChgsVolume2: null,
     allChgsVolume3: null,
-    sunAllChangeVolume: null,
-    sunMajorVolume: null,
-    monAllChangeVolume: null,
-    monMajorVolume: null,
-    tuesMajorVolume: null,
-    tuesAllChangeVolume: null,
-    wedMajorVolume: null,
-    wedAllChangeVolume: null,
-    thurMajorVolume: null,
-    thurAllChangeVolume: null,
-    friMajorVolume: null,
-    friAllChangeVolume: null,
+
+    day0AllChangeVolume: null,
+    day0MajorVolume: null,
+
+    day1AllChangeVolume: null,
+    day1MajorVolume: null,
+
+    day2AllChangeVolume: null,
+    day2MajorVolume: null,
+
+    day3AllChangeVolume: null,
+    day3MajorVolume: null,
+
+    day4AllChangeVolume: null,
+    day4MajorVolume: null,
+    
+    day5AllChangeVolume: null,
+    day5MajorVolume: null,
+    
+    day6AllChangeVolume: null,
     satMajorVolume: null,
-    satAllChangeVolume: null,
 
     changes: [
       {
@@ -202,155 +209,155 @@ var changeVolume2;
      }
      );
 
-    //Gets All changes for Sun
-    axios.get("/api/change-days-count?major=false&offset=0&days=1")
+    //Gets All changes for Day 0
+    axios.get("/api/change-days-count?major=false&offset=0&days=0")
     .then ( request => {
       this.setState (
         {
-          sunChangeVolume: request.data
+          day0AllChangeVolume: request.data
         }
       )
     }
     );
 
-    //Gets Major changes for Sun
-    axios.get("/api/change-days-count?major=true&offset=0&days=1")
+    //Gets Major changes for Day 0
+    axios.get("/api/change-days-count?major=true&offset=0&days=0")
     .then ( request => {
       this.setState (
         {
-          sunMajorVolume: request.data
+          day0MajorVolume: request.data
         }
       )
     }
     );
 
-    //Gets All changes for Mon
-    axios.get("/api/change-days-count?major=false&offset=1&days=1")
+    //Gets All changes for Day 1
+    axios.get("/api/change-days-count?major=false&offset=1&days=0")
     .then ( request => {
       this.setState (
        {
-          monChangeVolume: request.data
+          day1AllChangeVolume: request.data
         }
       )
         }
         );
 
-    //Gets Major changes for Mon
-    axios.get("/api/change-days-count?major=true&offset=1&days=1")
+    //Gets Major changes for Day 1
+    axios.get("/api/change-days-count?major=true&offset=1&days=0")
     .then ( request => {
       this.setState (
         {
-          monMajorVolume: request.data
+          day1MajorVolume: request.data
         }
       )
     }
     );
 
-    //Gets All changes for Tues
-    axios.get("/api/change-days-count?major=false&offset=2&days=1")
+    //Gets All changes for Day 2
+    axios.get("/api/change-days-count?major=false&offset=2&days=0")
     .then ( request => {
       this.setState (
         {
-          tuesAllChangeVolume: request.data
+          day2AllChangeVolume: request.data
         }
       )
     }
     );
 
-    //Gets Major changes for Tues
-    axios.get("/api/change-days-count?major=true&offset=2&days=1")
+    //Gets Major changes for Day 2
+    axios.get("/api/change-days-count?major=true&offset=2&days=0")
     .then ( request => {
       this.setState (
         {
-          tuesMajorVolume: request.data
+          day2MajorVolume: request.data
         }
       )
     }
     );
 
-    //Gets All changes for Wed 
-    axios.get("/api/change-days-count?major=false&offset=3&days=1")
+    //Gets All changes for Day 3 
+    axios.get("/api/change-days-count?major=false&offset=3&days=0")
     .then ( request => {
       this.setState (
         {
-          wedAllChangeVolume: request.data
+          day3AllChangeVolume: request.data
         }
       )
     }
     );
 
-    //Gets Major changes for Wed 
-    axios.get("/api/change-days-count?major=true&offset=3&days=1")
+    //Gets Major changes for Day 3 
+    axios.get("/api/change-days-count?major=true&offset=3&days=0")
     .then ( request => {
       this.setState (
         {
-          wedMajorVolume: request.data
+          day3MajorVolume: request.data
         }
       )
     }
     );
     
- //Gets All changes for Thurs 
- axios.get("/api/change-days-count?major=false&offset=4&days=1")
+ //Gets All changes for Day 4 
+ axios.get("/api/change-days-count?major=false&offset=4&days=0")
  .then ( request => {
    this.setState (
      {
-       thursAllChangeVolume: request.data
+       day4AllChangeVolume: request.data
      }
    )
  }
  );
 
- //Gets Major changes for Thurs 
- axios.get("/api/change-days-count?major=true&offset=4&days=1")
+ //Gets Major changes for Day 4 
+ axios.get("/api/change-days-count?major=true&offset=4&days=0")
  .then ( request => {
    this.setState (
      {
-       thursMajorVolume: request.data
+       day4MajorVolume: request.data
      }
    )
  }
  );
    
- //Gets All changes for Fri 
- axios.get("/api/change-days-count?major=false&offset=5&days=1")
+ //Gets All changes for Day 5 
+ axios.get("/api/change-days-count?major=false&offset=5&days=0")
  .then ( request => {
    this.setState (
      {
-       friAllChangeVolume: request.data
+       day5AllChangeVolume: request.data
      }
    )
  }
  );
 
- //Gets Major changes for Fri 
- axios.get("/api/change-days-count?major=true&offset=5&days=1")
+ //Gets Major changes for Day 5 
+ axios.get("/api/change-days-count?major=true&offset=5&days=0")
  .then ( request => {
    this.setState (
      {
-       friMajorVolume: request.data
+       day5MajorVolume: request.data
      }
    )
  }
  );
 
- //Gets All changes for Sat 
- axios.get("/api/change-days-count?major=false&offset=6&days=1")
+ //Gets All changes for Day 6 
+ axios.get("/api/change-days-count?major=false&offset=6&days=0")
  .then ( request => {
    this.setState (
      {
-       satAllChangeVolume: request.data
+       day6AllChangeVolume: request.data
      }
    )
  }
  );
 
- //Gets Major changes for Sat 
- axios.get("/api/change-days-count?major=true&offset=6&days=1")
+ //Gets Major changes for Day 6 
+ axios.get("/api/change-days-count?major=true&offset=6&days=0")
  .then ( request => {
    this.setState (
      {
-       satMajorVolume: request.data
+      day6MajorVolume: request.data
      }
    )
  }
@@ -364,14 +371,14 @@ var changeVolume2;
     var normal3 = this.state.allChgsVolume3 - this.state.monthMajorVolume3
 
    
-     //Sets variable for normal4- normal10 to get Normal changes for Sunday- Saturday (Days Graph)
-     var normal4 = this.state.sunChangeVolume - this.state.sunMajorVolume3
-     var normal5 = this.state.monChangeVolume - this.state.monMajorVolume
-     var normal6 = this.state.tuesChangeVolume - this.state.tuesMajorVolume2
-     var normal7 = this.state.wedChangeVolume - this.state.wedMajorVolume3
-     var normal8 = this.state.thurChangeVolume - this.state.thurMajorVolume
-     var normal9 = this.state.friChangeVolume - this.state.friMajorVolume2
-     var normal10 = this.state.satChangeVolume - this.state.satMajorVolume3
+     //Sets variable for normal4- normal10 to get Normal changes for Days 0 - 6(Days Graph)
+     var normal4 = this.state.day0AllChangeVolume - this.state.day0MajorVolume
+     var normal5 = this.state.day1AllChangeVolume - this.state.day1MajorVolume
+     var normal6 = this.state.day2AllChangeVolume - this.state.day2MajorVolume
+     var normal7 = this.state.day3AllChangeVolume - this.state.day3MajorVolume
+     var normal8 = this.state.day4AllChangeVolume - this.state.day4MajorVolume
+     var normal9 = this.state.day5AllChangeVolume - this.state.day5MajorVolume
+     var normal10 = this.state.day6AllChangeVolume - this.state.day6MajorVolume
 
     return (
       <>
@@ -383,7 +390,7 @@ var changeVolume2;
                   <Row>
                     <Col xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-chart text-warning"></i>
+                        <i className="nc-icon nc-globe-2 text-warning"></i>
                       </div>
                     </Col>
                     <Col xs="7">
@@ -402,7 +409,7 @@ var changeVolume2;
                   <Row>
                     <Col xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-umbrella-13 text-success"></i>
+                        <i className="nc-icon nc-notification-70 text-success"></i>
                       </div>
                     </Col>
                     <Col xs="7">
@@ -422,7 +429,7 @@ var changeVolume2;
                   <Row>
                     <Col xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-explore-2 text-danger"></i>
+                        <i className="nc-icon nc-bell-55 text-danger"></i>
                       </div>
                     </Col>
                     <Col xs="7">
@@ -463,7 +470,7 @@ var changeVolume2;
                       type="Line"
                       options={{
                         low: 0,
-                        high: 800,
+                       // high: 800,
                         showArea: false,
                         height: "245px",
                         axisX: {
@@ -530,16 +537,16 @@ var changeVolume2;
                         ], 
                         
                         series: [
-                          [this.state.monAllChangeVolume, this.state.tuesAllChangeVolume, this.state.wedAllChangeVolume, this.state.thurAllChangeVolume,this.state.friAllChangeVolume,this.state.satAllChangeVolume],
-                          [normal4, normal5, normal6, normal7, normal8, normal9, normal10],
-                          [this.state.sunMajorVolume, this.state.monMajorVolume, this.state.tuesMajorVolume2, this.state.wedMajorVolume3, this.state.thurMajorVolume, this.state.friMajorVolume, this.state.satMajorVolume] 
+                          [this.state.day0AllChangeVolume, this.state.day1AllChangeVolume, this.state.day2AllChangeVolume, this.state.day3AllChangeVolume, this.state.day4AllChangeVolume,this.state.day5AllChangeVolume,this.state.day6AllChangeVolume],
+                          [this.state.day0MajorVolume, this.state.day1MajorVolume, this.state.day2MajorVolume, this.state.day3MajorVolume, this.state.day4MajorVolume, this.state.day5MajorVolume, this.state.day6MajorVolume],
+                          [normal4, normal5, normal6, normal7, normal8, normal9, normal10] 
                         ],
                       }}
                       type="Bar"
                       
                       options={{
                         low: 0,
-                        high: 100,
+                        //high: ,
                         showArea: false,
                         height: "245px",
                         axisX: {
