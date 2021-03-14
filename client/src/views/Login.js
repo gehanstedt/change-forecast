@@ -20,6 +20,16 @@ class LoginPage extends Component {
     console.log(passwordinput);
     if (logininput === "sean") {alert("success")} else {alert("get outta here")};
   }
+
+  handleSubmit(event) {
+		event.preventDefault()
+		console.log('handleSubmit')
+		this.props._login(this.state.username, this.state.password)
+		this.setState({
+			redirectTo: '/'
+		})
+	}
+
   render () {        
     return (
       <>
@@ -53,7 +63,7 @@ class LoginPage extends Component {
                     </Card.Body>
                   </Card.Body>
                   <Card.Footer className="ml-auto mr-auto">
-                    <Button onClick={() => this.logincheck()}>
+                    <Button onClick={() => this.handleSubmit()}>
                       Login
                     </Button>
                   </Card.Footer>

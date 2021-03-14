@@ -203,6 +203,18 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+  userStatus: function(req, res) {
+    console.log (`In the userStatus controller.`);
+    console.log (`Req.user:`);
+    console.log (req.user);
+    if (req.user) {
+      return res.json({ user: req.user });
+    } 
+    
+    else {
+      return res.json({ user: null });
+    }
+  },
   update: function(req, res) {
     db.Book
       .findOneAndUpdate({ _id: req.params.id }, req.body)

@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 // import Home from './components/Home'
 import AdminLayout from "layouts/Admin.js";
 import GuestLayout from "layouts/Guest.js";
+import LoginForm from "components/LoginForm";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -65,13 +66,14 @@ class App extends Component {
 		super()
 		this.state = {
 			loggedIn: false,
-			user: null
+			user: null,
+			redirectTo: null
 		}
 		this._logout = this._logout.bind(this)
 		this._login = this._login.bind(this)
 	}
 	componentDidMount() {
-/*		axios.get('/auth/user').then(response => {
+		axios.get('/api/userstatus').then(response => {
 			console.log(response.data)
 			if (!!response.data.user) {
 				console.log('THERE IS A USER')
@@ -86,7 +88,6 @@ class App extends Component {
 				})
 			}
 		})
-*/
 	}
 
 	_logout(event) {
@@ -105,7 +106,7 @@ class App extends Component {
 
 	_login(username, password) {
 		axios
-			.post('/auth/login', {
+			.post('/api/signin', {
 				username,
 				password
 			})
@@ -115,13 +116,15 @@ class App extends Component {
 					// update the state
 					this.setState({
 						loggedIn: true,
-						user: response.data.user
+						user: response.data.user,
+						redirectTo: "/admin/dashboard"
 					})
 				}
 			})
 	}
 
 	render() {
+/*
 		return (
 			<BrowserRouter>
 			<Switch>
@@ -130,6 +133,47 @@ class App extends Component {
 			  <Redirect from="/" to="/guest/login" />
 			</Switch>
 		  </BrowserRouter>	)
+
+		  
+*/
+		console.log (`Logged in:  ${this.state.loggedIn}`);
+
+		if (this.state.loggedIn) {
+			return (
+				<div>
+					<Route path="/admin" render={(props) => <AdminLayout {...props} />} />   
+					<Redirect from="/" to="/admin/dashboard" />
+				</div>
+			)
+		}
+		
+		else {
+			return (
+				<div className="App">
+					{/* 
+					<h1>This is the main App component</h1>
+					<Header user={this.state.user} />
+					*/}
+					{/* LINKS to our different 'pages' */}
+					{/*  
+					<DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn} />
+					*/}
+					{/*  ROUTES */}
+					{/* <Route exact path="/" component={Home} /> */}
+					<Route path="/guest" render={(props) => 
+						<LoginForm 
+							_login={this._login}
+							loggedIn={this.state.loggedIn}
+							{...props}
+						/>} 
+					/>
+					<Route path="/admin" render={(props) => <AdminLayout {...props} />} />   
+					<Redirect from="/" to="/guest/login" />
+	
+					{/* <LoginForm _login={this._login} /> */}
+				</div>
+			)
+		}
 	}
 }
 

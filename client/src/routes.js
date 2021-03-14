@@ -15,6 +15,7 @@ import AllWeekReport from "views/AllWeekReport.js";
 import AllMonthReport from "views/AllMonthReport.js";
 import DetailReport from "views/DetailReport.js";
 import Register from "views/Register.js";
+import LoginForm from "components/LoginForm";
 
 
 const dashboardRoutes = [
@@ -129,9 +130,9 @@ const dashboardRoutes = [
   },
   {
     path: "/Login",
-    name: "Login",
+    name: "LoginForm",
     icon: "nc-icon nc-bell-55",
-    component: Login,
+    component: LoginForm,
     layout: "/guest",
     invisible: true,
   },
