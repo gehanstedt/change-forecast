@@ -36,8 +36,8 @@ module.exports = {
     cutOffDate.setHours(23);
     cutOffDate.setMinutes(59);
     cutOffDate.setSeconds(59);
-    console.log (`currentDate:  ${currentDate}`);
-    console.log (`cutOffDate ${cutOffDate}`);
+    // console.log (`currentDate:  ${currentDate}`);
+    // console.log (`cutOffDate ${cutOffDate}`);
     db.Change
       .find({
         start_date: {
@@ -62,8 +62,8 @@ module.exports = {
     cutOffDate.setHours(23);
     cutOffDate.setMinutes(59);
     cutOffDate.setSeconds(59);
-    console.log (`currentDate:  ${currentDate}`);
-    console.log (`cutOffDate ${cutOffDate}`);
+    // console.log (`currentDate:  ${currentDate}`);
+    // console.log (`cutOffDate ${cutOffDate}`);
 
     if (req.query.major === 'true') {
       db.Change
@@ -108,8 +108,8 @@ module.exports = {
       endDate = new Date (yearRequested, monthRequested, 1, 0, 0, 0)
     }
 
-    console.log (`beginDate:  ${beginDate}`);
-    console.log (`endDate ${endDate}`);
+    // console.log (`beginDate:  ${beginDate}`);
+    // console.log (`endDate ${endDate}`);
 
     if (req.query.major === 'true') {
       db.Change
@@ -153,8 +153,8 @@ module.exports = {
     cutOffDate.setHours(23);
     cutOffDate.setMinutes(59);
     cutOffDate.setSeconds(59);
-    console.log (`currentDate:  ${currentDate}`);
-    console.log (`cutOffDate ${cutOffDate}`);
+    // console.log (`currentDate:  ${currentDate}`);
+    // console.log (`cutOffDate ${cutOffDate}`);
     if (req.query.major === 'true') {
       console.log (`Only major changes requested.`)
       db.Change

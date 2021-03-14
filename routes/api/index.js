@@ -8,6 +8,8 @@ const changeRoutesVariable = require("./change-variable");
 const useraddRoutes = require("./useradd");
 const userstatusRoutes = require("./userstatus");
 const usersigninRoutes = require("./usersignin");
+const usersignoutRoutes = require("./usersignout");
+
 
 
 
@@ -21,5 +23,6 @@ router.use("/change-bymonth-count", changeRoutesByMonthCount);
 router.use("/useradd", useraddRoutes);
 router.use("/userstatus", userstatusRoutes);
 router.use("/signin", usersigninRoutes);
+router.use("/signout", usersignoutRoutes);
 
 module.exports = router;
