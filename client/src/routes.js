@@ -16,6 +16,8 @@ import AllMonthReport from "views/AllMonthReport.js";
 import DetailReport from "views/DetailReport.js";
 import Register from "views/Register.js";
 import LoginForm from "components/LoginForm";
+import Logout from "components/Logout";
+
 
 
 const dashboardRoutes = [
@@ -39,6 +41,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: Reports,
     layout: "/admin",
+    invisible: true
   },
   {
     path: "/MajorDay",
@@ -46,7 +49,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: MajorDay,
     layout: "/admin",
-    invisible: true,
+    invisible: false,
   },
   {
     path: "/MajorWeek",
@@ -54,7 +57,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: MajorWeek,
     layout: "/admin",
-    invisible: true,
+    invisible: false,
   },
   {
     path: "/MajorMonth",
@@ -62,31 +65,31 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: MajorMonth,
     layout: "/admin",
-    invisible: true,
+    invisible: false,
   },
   {
     path: "/AllDayReport",
-    name: "All Changes for today",
+    name: "Today All",
     icon: "nc-icon nc-notes",
     component: AllDayReport,
     layout: "/admin",
-    invisible: true,
+    invisible: false,
   },
   {
     path: "/AllWeekReport",
-    name: "All Changes for this week",
+    name: "Week All",
     icon: "nc-icon nc-notes",
     component: AllWeekReport,
     layout: "/admin",
-    invisible: true,
+    invisible: false,
   },
   {
     path: "/AllMonthReport",
-    name: "All Changes for this month",
+    name: "Month All",
     icon: "nc-icon nc-notes",
     component: AllMonthReport,
     layout: "/admin",
-    invisible: true,
+    invisible: false,
   },
   {
     path: "/user",
