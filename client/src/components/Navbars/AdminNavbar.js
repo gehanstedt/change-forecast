@@ -1,5 +1,6 @@
 
 import React, { Component } from "react";
+import axios from "axios";
 import { useLocation, BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
 import { Navbar, Container, Nav, Dropdown, Button } from "react-bootstrap";
 
@@ -28,9 +29,18 @@ function Header() {
     return "Brand";
   };
 
-  const handleLogout = () => {
-
-  }
+  const handleLogout = (event) => {
+      event.preventDefault()
+      console.log('logging out')
+      axios.get('/api/signout').then(response => {
+        console.log(response.data)
+        if (response.status === 200) {
+          console.log (`Logged out.`);
+          document.location.reload ();  
+        }
+      })
+  };
+  
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -71,8 +81,8 @@ function Header() {
               <Nav.Item>
                 <Nav.Link              
                   className="m-0"
-                  href="/logout"
-                  // onClick={(e) => e.preventDefault()}
+                  // href="/logout"
+                  onClick={(event) => handleLogout (event)}
                 >
                   <span className="no-icon">Log out</span>
                 </Nav.Link>

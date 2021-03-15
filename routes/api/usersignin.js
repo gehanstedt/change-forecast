@@ -14,6 +14,7 @@ router.route("/")
 
 router.route("/") 
   .post(passport.authenticate("local"), function(req, res) {
+    console.log (res);
     res.json(req.user);
 });
 

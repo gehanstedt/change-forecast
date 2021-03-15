@@ -46,10 +46,10 @@ class Logout extends Component {
 	}
 
 	render() {
-/*		if (this.state.redirectTo) {
+		if (this.state.redirectTo) {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		}
-*/
+
 	}
 }
 

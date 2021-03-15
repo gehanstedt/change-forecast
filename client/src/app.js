@@ -122,6 +122,11 @@ class App extends Component {
 					})
 				}
 			})
+			.catch ((error) => {
+				console.log (`In catch of _login`);
+				alert ("Invalid username or password.");
+				document.location.reload ();
+			})
 	}
 
 	render() {
