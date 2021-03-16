@@ -44,10 +44,10 @@
 
 ## Screenshots 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFKAAyXvdutf0kjEwsxWNT5xfVd2U3OdNm3g&usqp=CAU">
-![Forecast](https://user-images.githubusercontent.com/71415601/111384968-829a0580-8680-11eb-885f-eec5abc01e65.JPG)
-![Todaymajor1](https://user-images.githubusercontent.com/71415601/111384976-84fc5f80-8680-11eb-8b60-57894cfb9989.JPG)
-[dashboard](https://user-images.githubusercontent.com/71415601/111385013-947ba880-8680-11eb-919d-73c5f86ecc9b.JPG)
-![Login_page2](https://user-images.githubusercontent.com/71415601/111385315-fc31f380-8680-11eb-82bf-32d27371548b.JPG)
+![Login_page2](https://user-images.githubusercontent.com/71415601/111387573-51233900-8684-11eb-8df6-246314877dd8.JPG)
+![dashboard](https://user-images.githubusercontent.com/71415601/111387585-541e2980-8684-11eb-9a9a-5bd9c3a539eb.JPG)
+![Forecast](https://user-images.githubusercontent.com/71415601/111387589-55e7ed00-8684-11eb-9530-606eb2edb83d.JPG)
+![Todaymajor1](https://user-images.githubusercontent.com/71415601/111387603-5b453780-8684-11eb-8073-471a7bca851a.JPG)
 <br>
 
 
