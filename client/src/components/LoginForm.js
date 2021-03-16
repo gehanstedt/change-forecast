@@ -38,10 +38,9 @@ class LoginForm extends Component {
 			return <Redirect to={{ pathname: this.state.redirectTo }} />
 		} else {
 			return (
+				<body class="colorchange">
 				<div className="LoginForm">
-
 					<h1>LOGIN</h1>
-					
 					<form>
 						<label htmlFor="username" class="loginForm">Username: </label>
 						<input
@@ -62,6 +61,8 @@ class LoginForm extends Component {
 						<button class="btn" onClick={this.handleSubmit}>Login</button>
 					</form>
 				</div>
+				</body>
+
 			)
 		}
 	}
