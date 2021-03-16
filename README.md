@@ -44,6 +44,7 @@
 <br>
 
 ## Screenshots 
+<<<<<<< HEAD
 <img src="https://user-images.githubusercontent.com/71415601/111387573-51233900-8684-11eb-8df6-246314877dd8.JPG" /> 
 <img src="https://user-images.githubusercontent.com/71415601/111387585-541e2980-8684-11eb-9a9a-5bd9c3a539eb.JPG" /> 
 <img src="https://user-images.githubusercontent.com/71415601/111387589-55e7ed00-8684-11eb-9530-606eb2edb83d.JPG" /> 
@@ -51,6 +52,13 @@
 
 
 
+=======
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFKAAyXvdutf0kjEwsxWNT5xfVd2U3OdNm3g&usqp=CAU">
+![Login_page2](https://user-images.githubusercontent.com/71415601/111387573-51233900-8684-11eb-8df6-246314877dd8.JPG)
+![dashboard](https://user-images.githubusercontent.com/71415601/111387585-541e2980-8684-11eb-9a9a-5bd9c3a539eb.JPG)
+![Forecast](https://user-images.githubusercontent.com/71415601/111387589-55e7ed00-8684-11eb-9530-606eb2edb83d.JPG)
+![Todaymajor1](https://user-images.githubusercontent.com/71415601/111387603-5b453780-8684-11eb-8073-471a7bca851a.JPG)
+>>>>>>> df753c3b47688331122ef1b8128548b53842bf03
 <br>
 
 
