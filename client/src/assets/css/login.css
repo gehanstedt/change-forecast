@@ -1,3 +1,4 @@
+/* Login Background */
 .colorchange {
   margin: 0;
   color: #ffffff;
@@ -23,10 +24,7 @@
   }
 }
 
-
-
-
-/* 
+/* Login Form */
 .page-content {
 	width: 100%;
 	margin:  0 auto;
@@ -276,11 +274,9 @@
 		-webkit-flex-direction: column;
 	}
 }
-*/
 
-
-
-.btn {
+/* Login Button */
+.loginbtn {
 	box-shadow: 0px 1px 0px 0px #f0f7fa;
 	background:linear-gradient(to bottom, #c9baff 5%, #d5ebff 100%);
 	background-color:#ffffff;
@@ -295,12 +291,36 @@
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #000000;
+	margin-top: 3%;
 }
-.btn:hover {
-	background:linear-gradient(to bottom, #e993ff 5%, #ac5d5d 100%);
+.loginbtn:hover {
+	background:linear-gradient(to bottom, #daa5e7 5%, #bc87c9 100%);
 	background-color:#f1f1f1;
 }
-.btn:active {
+.loginbtn:active {
 	position:relative;
 	top:1px;
+}
+
+/* Login Text above form */
+.login-banner{
+	margin-left: 8%;
+}
+
+/* Change Forecast Image */
+.logoimg{
+	max-width: 100%; 
+	height:auto;
+	margin:0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 450px;
+	width: 450px;
+	margin-top: 5%;
+}
+
+/* Username & Password Text */
+.loginForm{
+	margin-top: 5%;
 }
