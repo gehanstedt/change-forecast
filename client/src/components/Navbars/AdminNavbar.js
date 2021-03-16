@@ -68,6 +68,7 @@ function Header() {
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">          
             <Nav className="ml-auto" navbar>
+              {/* 
               <Nav.Item>
                 <Nav.Link
                   className="m-0"
@@ -77,6 +78,7 @@ function Header() {
                   <span className="no-icon">Account</span>
                 </Nav.Link>
               </Nav.Item>
+              */}
               
               <Nav.Item>
                 <Nav.Link              
