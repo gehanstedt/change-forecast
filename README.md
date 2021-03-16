@@ -26,10 +26,11 @@
 
 ## User Story 
 ```
- From an existing database within the company environment, change requests have been entered through a series of internal processes. The user has the ability to access  that data in a graphical view. The user is provided with the option of viewing the change forecast,  dashboard view of changes, or raw change data report.
-
-
-
+ From an existing database within the company environment, 
+ change requests have been entered through a series of internal processes. 
+ The user has the ability to access  that data in a graphical view. 
+ The user is provided with the option of viewing the change forecast, 
+ dashboard view of changes, or raw change data report.
 ```
 <br>
 
