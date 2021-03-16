@@ -1,8 +1,9 @@
 
-![Build:Progress](https://img.shields.io/badge/Build-In%20Progress-yellow)
+![Build:Progress](https://img.shields.io/badge/Build-Deployed-green)
 
 # Change Forecast
-This application will be a mock-up for a proposed internal project.   This application would store a subset of mock changes to then be reviewed and published as the dashboard to the company's community.  It is Project 3 from the Georgia Tech Coding Bootcamp.
+ You are responsible for infrastructure stability and you need a quick way to view upcoming major change activity. The answer is Change Forecast. It provides a consolidated view of change data and graphical views. It also provides a seven day forecast using weather. The data provided is based on current day, week, and 30 days.
+
 <br>
 
 ## Table of Contents
@@ -19,20 +20,17 @@ This application will be a mock-up for a proposed internal project.   This appli
 
 
 ## Description 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  
-<br>
+ Change-forecast is a web tool that is a personal change management assistant that uses API’s to collect change details.  
 
 
 
 ## User Story 
 ```
-AS A change executive
-I WANT to see an application that provides a view of upcoming Major changes over a period of time that can be reviewed and then published in a dashboard format.  
-Access in this demonstration environment will require authentication through a local user database which allows users to create their own accounts.
-Each change will have two “review states”, outside of the ServiceNow state. The “review states” are either Reviewed or Pending (defaulting to Pending).
-Allow for searching of change numbers and descriptions.  
-Logout button to redirect the user to the sign in page 
-
+ From an existing database within the company environment, 
+ change requests have been entered through a series of internal processes. 
+ The user has the ability to access  that data in a graphical view. 
+ The user is provided with the option of viewing the change forecast, 
+ dashboard view of changes, or raw change data report.
 ```
 <br>
 
@@ -43,11 +41,16 @@ Logout button to redirect the user to the sign in page
 
 ## Links 
 * Github Repo: https://github.com/gehanstedt/change-forecast.git <br>
-* Heroku: URL
+* Heroku: https://obscure-coast-18273.herokuapp.com/
 <br>
 
 ## Screenshots 
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFKAAyXvdutf0kjEwsxWNT5xfVd2U3OdNm3g&usqp=CAU">
+
+<img src="https://user-images.githubusercontent.com/71415601/111387573-51233900-8684-11eb-8df6-246314877dd8.JPG" /> 
+<img src="https://user-images.githubusercontent.com/71415601/111387585-541e2980-8684-11eb-9a9a-5bd9c3a539eb.JPG" /> 
+<img src="https://user-images.githubusercontent.com/71415601/111387589-55e7ed00-8684-11eb-9530-606eb2edb83d.JPG" /> 
+<img src="https://user-images.githubusercontent.com/71415601/111387603-5b453780-8684-11eb-8073-471a7bca851a.JPG" />
+
 <br>
 
 
@@ -80,7 +83,7 @@ npm run start
 <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" /> 
 <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" /> 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> 
-<img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
 <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" /> 
 
